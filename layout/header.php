@@ -32,7 +32,7 @@
               <div class="account-user"><i data-feather="user"></i></div>
               <ul class="profile-dropdown onhover-show-div">
                 <li><a href="index.php"><i data-feather="log-out"> </i><span>Log Out</span></a></li>
-                <li><a href="activity.php"><i data-feather="activity"> </i><span>Activity</span></a></li>
+                <!-- <li><a href="activity.php"><i data-feather="activity"> </i><span>Activity</span></a></li> -->
               </ul>
             </li>
           </ul>

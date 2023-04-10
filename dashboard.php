@@ -78,7 +78,7 @@ require 'middleware/is_loggedin.php';
             <div class="col-xl-9 col-md-12 box-col-9">
               <div class="row">
                 <div class="col-lg-4 col-md-6 box-col-4">
-                  <div class="card profit-card">
+                  <!-- <div class="card profit-card">
                     <div class="card-header pb-0">
                       <div class="d-flex justify-content-between">
                         <div class="flex-grow-1">
@@ -93,10 +93,10 @@ require 'middleware/is_loggedin.php';
                         </div>
                       </div>
                     </div>
-                  </div>
+                  </div> -->
                 </div>
                 <div class="col-lg-4 col-md-6 box-col-4">
-                  <div class="card profit-card">
+                  <!-- <div class="card profit-card">
                     <div class="card-header pb-0">
                       <div class="d-flex justify-content-between">
                         <div class="flex-grow-1">
@@ -111,7 +111,7 @@ require 'middleware/is_loggedin.php';
                         </div>
                       </div>
                     </div>
-                  </div>
+                  </div> -->
                 </div>
               </div>
             </div>
