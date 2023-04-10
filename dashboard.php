@@ -71,6 +71,9 @@ require 'middleware/is_loggedin.php';
               </div>
             </div>
           </div>
+          <div class="text-center">
+            <img class="img-fluid for-light mb-3" src="assets/images/logo/logo.png" alt="logo" width="100">
+          </div>
         </div>
         <!-- Container-fluid starts-->
         <div class="container-fluid dashboard-2">

@@ -59,9 +59,12 @@ include './middleware/is_loggedin.php';
             <div class="row">
               <!-- Zero Configuration  Starts-->
               <div class="col-sm-12">
+                <div class="text-center">
+                  <img class="img-fluid for-light mb-3" src="assets/images/logo/logo.png" alt="logo" width="100">
+                </div>
                 <div class="card">
                   <div class="card-header pb-0">
-                    <h4>Result Uploading Page</h4>
+                    <h4 class="mb-3">Result Uploading Page</h4>
                       <form action="" method="post">
                         <div class="mb-3">
                           <label for="name" class="form-label">Course</label>
@@ -105,31 +108,6 @@ include './middleware/is_loggedin.php';
                         </div>
                         <button type="button" class="btn btn-success">Upload Results</button>
                       </form>
-                  </div>
-                  <div class="card-body">
-                    <div class="table-responsive">
-                      <table class="display" id="basic-1">
-                        <thead>
-                          <tr>
-                            <th>Name</th>
-                            <th>Jamb Registration</th>
-                            <th>Payment type</th>
-                            <th>Amount</th>
-                            <th>Reference</th>
-                            <th>Action</th>
-                          </tr>
-                        </thead>
-                        <tbody>
-                          <tr>
-                            <td>Tiger Nixon</td>
-                            <td>System Architect</td>
-                            <td>Edinburgh</td>
-                            <td>61</td>
-                            <td>2011/04/25</td>
-                          </tr>
-                        </tbody>
-                      </table>
-                    </div>
                   </div>
                 </div>
               </div>

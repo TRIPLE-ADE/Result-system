@@ -18,7 +18,12 @@
                   <ul>
                     <li class="sidebar-list"><a class="sidebar-link sidebar-title" href="dashboard.php"><i data-feather="home"></i><span>Dashboard</span></a>
                     </li>
-                    <li class="sidebar-list"><a class="sidebar-link sidebar-title" href="result.php"><i data-feather="upload"></i><span>Upload Result</span></a>
+                    <li class="sidebar-list"><a class="sidebar-link sidebar-title" href="result-upload.php"><i data-feather="upload"></i><span>Upload Result</span></a>
+                    </li>
+                    <li class="sidebar-list"><a class="sidebar-link sidebar-title" href="general-result.php"><i data-feather="users"></i><span>General
+                       Result</span></a>
+                    </li>
+                    <li class="sidebar-list"><a class="sidebar-link sidebar-title" href="individual-result.php"><i data-feather="user"></i><span>Individual Result</span></a>
                     </li>
                   
                   </ul>
