@@ -78,40 +78,8 @@ require 'middleware/is_loggedin.php';
             <div class="col-xl-9 col-md-12 box-col-9">
               <div class="row">
                 <div class="col-lg-4 col-md-6 box-col-4">
-                  <!-- <div class="card profit-card">
-                    <div class="card-header pb-0">
-                      <div class="d-flex justify-content-between">
-                        <div class="flex-grow-1">
-                          <p class="square-after f-w-600 header-text-success">Total Payment<i class="fa fa-circle"> </i></p>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="card-body">
-                      <div class="d-flex">
-                        <div class="flex-grow-1">
-                          <h4>N8,55,462</h4>
-                        </div>
-                      </div>
-                    </div>
-                  </div> -->
                 </div>
                 <div class="col-lg-4 col-md-6 box-col-4">
-                  <!-- <div class="card profit-card">
-                    <div class="card-header pb-0">
-                      <div class="d-flex justify-content-between">
-                        <div class="flex-grow-1">
-                          <p class="square-after f-w-600 header-text-success">Total Number of Students<i class="fa fa-circle"> </i></p>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="card-body">
-                      <div class="d-flex">
-                        <div class="flex-grow-1">
-                          <h4>N8,55,462</h4>
-                        </div>
-                      </div>
-                    </div>
-                  </div> -->
                 </div>
               </div>
             </div>

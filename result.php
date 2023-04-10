@@ -62,72 +62,50 @@ include './middleware/is_loggedin.php';
                 <div class="card">
                   <div class="card-header pb-0">
                     <h4>Result Uploading Page</h4>
-                
-                    <!-- <button type="button" style="float:right;" class="btn btn-success btn-sm" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
-                      Upload Result
-                    </button> -->
-
-                    <!-- Modal -->
-                    <!-- <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-                      <div class="modal-dialog">
-                        <div class="modal-content">
-                          <div class="modal-header">
-                            <h5 class="modal-title" id="staticBackdropLabel">Upload Result</h5>
-                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                          </div>
-                          <div class="modal-body"> -->
-                            <form action="" method="post">
-
-                              <div class="mb-3">
-                                <label for="name" class="form-label">Course</label>
-                                <select class="form-select" aria-label="Select example">
-                                  <option selected disabled>Select Course Type</option>
-                                  <option value="1"></option>
-                                  <option value="2"></option>
-                                  <option value="3"></option>
-                                </select>
-                              </div>
-                              <div class="mb-3">
-                                <label for="email" class="form-label">Level</label>
-                                <select class="form-select" aria-label="Default select example">
-                                  <option selected disabled>Select Level Type</option>
-                                  <option value="1"></option>
-                                  <option value="2"></option>
-                                  <option value="3"></option>
-                                </select>
-                              </div>
-                              <div class="mb-3">
-                                <label for="jamb-no" class="form-label">Session</label>
-                                <select class="form-select" aria-label="Default select example">
-                                  <option selected disabled>Select Session Type</option>
-                                  <option value="1"></option>
-                                  <option value="2"></option>
-                                  <option value="3"></option>
-                                </select>
-                              </div>
-                              <div class="mb-3">
-                                <label for="payment-type" class="form-label">Semester</label> 
-                                <select class="form-select" aria-label="Default select example">
-                                  <option selected disabled>Select Semester Type</option>
-                                  <option value="1"></option>
-                                  <option value="2"></option>
-                                  <option value="3"></option>
-                                </select>
-                              </div>
-                              <div class="mb-3">
-                              <label for="payment-type" class="form-label">Add Result File</label>
-                                <input type="file" name="payment-type" class="form-control" id="email" placeholder="Payment Type">
-                              </div>
-                            </form>
-                          </div>
-                          <div class="modal-footer">
-                            <button type="button" class="btn btn-success">Upload Results</button>
-                          </div>
-                        <!-- </div>
-                      </div>
-                    </div>
-
-                  </div> -->
+                      <form action="" method="post">
+                        <div class="mb-3">
+                          <label for="name" class="form-label">Course</label>
+                          <select class="form-select" aria-label="Select example">
+                            <option selected disabled>Select Course Type</option>
+                            <option value="1"></option>
+                            <option value="2"></option>
+                            <option value="3"></option>
+                          </select>
+                        </div>
+                        <div class="mb-3">
+                          <label for="email" class="form-label">Level</label>
+                          <select class="form-select" aria-label="Default select example">
+                            <option selected disabled>Select Level Type</option>
+                            <option value="1"></option>
+                            <option value="2"></option>
+                            <option value="3"></option>
+                          </select>
+                        </div>
+                        <div class="mb-3">
+                          <label for="jamb-no" class="form-label">Session</label>
+                          <select class="form-select" aria-label="Default select example">
+                            <option selected disabled>Select Session Type</option>
+                            <option value="1"></option>
+                            <option value="2"></option>
+                            <option value="3"></option>
+                          </select>
+                        </div>
+                        <div class="mb-3">
+                          <label for="payment-type" class="form-label">Semester</label> 
+                          <select class="form-select" aria-label="Default select example">
+                            <option selected disabled>Select Semester Type</option>
+                            <option value="1"></option>
+                            <option value="2"></option>
+                            <option value="3"></option>
+                          </select>
+                        </div>
+                        <div class="mb-3">
+                        <label for="payment-type" class="form-label">Add Result File</label>
+                          <input type="file" name="payment-type" class="form-control" id="email" placeholder="Payment Type">
+                        </div>
+                        <button type="button" class="btn btn-success">Upload Results</button>
+                      </form>
+                  </div>
                   <div class="card-body">
                     <div class="table-responsive">
                       <table class="display" id="basic-1">
