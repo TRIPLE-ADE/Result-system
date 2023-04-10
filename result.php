@@ -13,7 +13,7 @@ include './middleware/is_loggedin.php';
   <meta name="author" content="pixelstrap">
   <link rel="icon" href="assets/images/logo/logo.png" type="image/x-icon">
   <link rel="shortcut icon" href="assets/images/logo/logo.png" type="image/x-icon">
-  <title>Bursary | Payment</title>
+  <title>Bursary | Upload Result</title>
   <link rel="preconnect" href="https://fonts.googleapis.com/">
   <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap" rel="stylesheet">
@@ -73,7 +73,7 @@ include './middleware/is_loggedin.php';
                       <div class="modal-dialog">
                         <div class="modal-content">
                           <div class="modal-header">
-                            <h5 class="modal-title" id="staticBackdropLabel">Result</h5>
+                            <h5 class="modal-title" id="staticBackdropLabel">Upload Result</h5>
                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                           </div>
                           <div class="modal-body">
@@ -81,82 +81,42 @@ include './middleware/is_loggedin.php';
 
                               <div class="mb-3">
                                 <label for="name" class="form-label">Course</label>
-                                <!-- <input type="text" name="name" id="name" class="form-control" placeholder="Fullname"> -->
-                                <select class="form-select" aria-label="Default select example">
-                                  <option selected disabled>Select Course</option>
-                                  <?php
-                                  $get_payment_type = "SELECT * FROM payment_types";
-                                  $query_payment_type = mysqli_query($dbconnetion, $get_payment_type);
-                                  while($payment_type = mysqli_fetch_array($query_payment_type)){
-                                    $payment = $payment_type['name'];
-                                    $payment_id = $payment['id'];
-                                    ?>
-                                  <option value="<?php echo $payment_id;?>"><?php echo $payment;?></option>
-
-                                  <?php
-                                  }
-                                  ?>
+                                <select class="form-select" aria-label="Select example">
+                                  <option selected disabled>Select Course Type</option>
+                                  <option value="1"></option>
+                                  <option value="2"></option>
+                                  <option value="3"></option>
                                 </select>
                               </div>
                               <div class="mb-3">
                                 <label for="email" class="form-label">Level</label>
-                                <!-- <input type="email" name="email" class="form-control" id="email" placeholder="name@example.com"> -->
                                 <select class="form-select" aria-label="Default select example">
-                                  <option selected disabled>Select Level</option>
-                                  <?php
-                                  $get_payment_type = "SELECT * FROM payment_types";
-                                  $query_payment_type = mysqli_query($dbconnetion, $get_payment_type);
-                                  while($payment_type = mysqli_fetch_array($query_payment_type)){
-                                    $payment = $payment_type['name'];
-                                    $payment_id = $payment['id'];
-                                    ?>
-                                  <option value="<?php echo $payment_id;?>"><?php echo $payment;?></option>
-
-                                  <?php
-                                  }
-                                  ?>
+                                  <option selected disabled>Select Level Type</option>
+                                  <option value="1"></option>
+                                  <option value="2"></option>
+                                  <option value="3"></option>
                                 </select>
                               </div>
                               <div class="mb-3">
                                 <label for="jamb-no" class="form-label">Session</label>
-                                <!-- <input type="text" name="name" id="jamb-no" class="form-control" placeholder="Jamb Registration"> -->
                                 <select class="form-select" aria-label="Default select example">
-                                  <option selected disabled>Select Session</option>
-                                  <?php
-                                  $get_payment_type = "SELECT * FROM payment_types";
-                                  $query_payment_type = mysqli_query($dbconnetion, $get_payment_type);
-                                  while($payment_type = mysqli_fetch_array($query_payment_type)){
-                                    $payment = $payment_type['name'];
-                                    $payment_id = $payment['id'];
-                                    ?>
-                                  <option value="<?php echo $payment_id;?>"><?php echo $payment;?></option>
-
-                                  <?php
-                                  }
-                                  ?>
+                                  <option selected disabled>Select Session Type</option>
+                                  <option value="1"></option>
+                                  <option value="2"></option>
+                                  <option value="3"></option>
                                 </select>
                               </div>
                               <div class="mb-3">
-                                <label for="payment-type" class="form-label">Semester</label>
-                                <!-- <input type="text" name="payment-type" class="form-control" id="email" placeholder="Payment Type"> -->
+                                <label for="payment-type" class="form-label">Semester</label> 
                                 <select class="form-select" aria-label="Default select example">
-                                  <option selected disabled>Select semester</option>
-                                  <?php
-                                  $get_payment_type = "SELECT * FROM payment_types";
-                                  $query_payment_type = mysqli_query($dbconnetion, $get_payment_type);
-                                  while($payment_type = mysqli_fetch_array($query_payment_type)){
-                                    $payment = $payment_type['name'];
-                                    $payment_id = $payment['id'];
-                                    ?>
-                                  <option value="<?php echo $payment_id;?>"><?php echo $payment;?></option>
-
-                                  <?php
-                                  }
-                                  ?>
+                                  <option selected disabled>Select Semester Type</option>
+                                  <option value="1"></option>
+                                  <option value="2"></option>
+                                  <option value="3"></option>
                                 </select>
                               </div>
                               <div class="mb-3">
-                                <label for="payment-type" class="form-label">Add Result File</label>
+                              <label for="payment-type" class="form-label">Add Result File</label>
                                 <input type="file" name="payment-type" class="form-control" id="email" placeholder="Payment Type">
                               </div>
                             </form>
@@ -171,7 +131,7 @@ include './middleware/is_loggedin.php';
 
                   </div>
                   <div class="card-body">
-                    <div class="table-responsive">
+                    <!-- <div class="table-responsive">
                       <table class="display" id="basic-1">
                         <thead>
                           <tr>
@@ -368,7 +328,7 @@ include './middleware/is_loggedin.php';
                           </tr>
                         </tbody>
                       </table>
-                    </div>
+                    </div> -->
                   </div>
                 </div>
               </div>

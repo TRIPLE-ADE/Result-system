@@ -18,7 +18,7 @@
                   <ul>
                     <li class="sidebar-list"><a class="sidebar-link sidebar-title" href="dashboard.php"><i data-feather="home"></i><span>Dashboard</span></a>
                     </li>
-                    <li class="sidebar-list"><a class="sidebar-link sidebar-title" href="payment.php"><i data-feather="upload"></i><span>Upload Results</span></a>
+                    <li class="sidebar-list"><a class="sidebar-link sidebar-title" href="result.php"><i data-feather="upload"></i><span>Upload Result</span></a>
                     </li>
                   
                   </ul>
