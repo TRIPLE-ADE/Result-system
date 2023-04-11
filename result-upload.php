@@ -86,7 +86,7 @@ include 'Handlers.php';
               <?php } ?>
               <div class="card">
                 <div class="card-header pb-0">
-                  <h4 class="mb-3">Result Uploading Page</h4>
+                  <h4 class="mb-3">Result Uploading</h4>
                   <form action="controller/UploadResult.php" method="post" enctype="multipart/form-data">
                     <div class="mb-3">
                       <label for="name" class="form-label">Course</label>
@@ -104,7 +104,7 @@ include 'Handlers.php';
                     </div>
                     <div class="mb-3">
                       <label for="payment-type" class="form-label">Department</label>
-                      <select class="form-select" aria-label="Default select example" name="department">
+                      <select class="form-select" aria-label="Default select example" name="department_id">
                         <option selected disabled>Select Department</option>
                         <?php
                         $departments = departments();

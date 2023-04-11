@@ -31,18 +31,18 @@ if (isset($_POST['upload_result'])) {
 
         // check if result already exist
 
-        $check_exist = "SELECT * FROM results WHERE matric = '$matric' AND course_id = '$course_id' AND semester = '$semester' AND level = '$level' AND session = '$session'";
+        $check_exist = "SELECT * FROM results WHERE matric = '$matric' AND department_id = '$department_id' AND course_id = '$course_id' AND semester = '$semester' AND level = '$level' AND session = '$session'";
         $query_check_exist = mysqli_query($dbconnect,  $check_exist);
         $is_result_exist = mysqli_num_rows($query_check_exist);
         
         if($is_result_exist > 0) {
             $updated_at = date("Y-m-d h:i:s");
-            $update_result = "UPDATE results SET ca_score = '$ca_score', exam_score = '$exam_score', total_score = '$total_score', updated_at ='$updated_at' WHERE matric = '$matric' AND course_id = '$course_id' AND semester = '$semester' AND level = '$level' AND session = '$session'";
+            $update_result = "UPDATE results SET ca_score = '$ca_score', exam_score = '$exam_score', total_score = '$total_score', updated_at ='$updated_at' WHERE matric = '$matric' AND department_id = '$department_id' AND course_id = '$course_id' AND semester = '$semester' AND level = '$level' AND session = '$session'";
             $query_update_result =  mysqli_query($dbconnect, $update_result);
 
         }else{
-            $store_result =  "INSERT INTO results (matric, course_id, ca_score, exam_score, total_score, semester, level, session) VALUES 
-            ('$matric', '$course_id', '$ca_score', '$exam_score', '$total_score', '$semester', '$level', '$session')";
+            $store_result =  "INSERT INTO results (matric, course_id, department_id, ca_score, exam_score, total_score, semester, level, session) VALUES 
+            ('$matric', '$course_id', '$department_id', '$ca_score', '$exam_score', '$total_score', '$semester', '$level', '$session')";
     
             $query_store_result = mysqli_query($dbconnect, $store_result);
         }
