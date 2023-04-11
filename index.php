@@ -54,8 +54,8 @@
                           } else {
                             echo 'Oops ';
                           } ?> </b>
-                          
-                          <?php echo $_GET['msg']; ?></p>
+
+                      <?php echo $_GET['msg']; ?></p>
 
                     <button class="btn-close" type="button" data-bs-dismiss="alert" aria-label="Close"></button>
 

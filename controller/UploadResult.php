@@ -11,18 +11,7 @@ if (isset($_POST['upload_result'])) {
     $semester = mysqli_real_escape_string($dbconnect, $_POST['semester']);
     $level = mysqli_real_escape_string($dbconnect, $_POST['level']);
     $session = mysqli_real_escape_string($dbconnect, $_POST['session']);
-
-    // $file = $_FILES['result_file']['tmp_name'];
-    // $handle = fopen($file, "r");
-    // $c = 0;
-    // while (($filesop = fgetcsv($handle, 16, ",")) !== false) {
-    //     $fname = $filesop[0];
-    //     $lname = $filesop[1];
-    //     $lname2 = $filesop[2];
-
-    //     echo $fname.' -- '.$lname. ' -- '.$lname2.'<br>';
-
-    // }
+    $department_id = mysqli_real_escape_string($dbconnect, $_POST['department_id']);
 
     $file = $_FILES['result_file']['name'];
     $file_loc = $_FILES['result_file']['tmp_name'];
@@ -44,7 +33,7 @@ if (isset($_POST['upload_result'])) {
 
         $check_exist = "SELECT * FROM results WHERE matric = '$matric' AND course_id = '$course_id' AND semester = '$semester' AND level = '$level' AND session = '$session'";
         $query_check_exist = mysqli_query($dbconnect,  $check_exist);
-        echo $is_result_exist = mysqli_num_rows($query_check_exist);
+        $is_result_exist = mysqli_num_rows($query_check_exist);
         
         if($is_result_exist > 0) {
             $updated_at = date("Y-m-d h:i:s");
@@ -60,10 +49,10 @@ if (isset($_POST['upload_result'])) {
 
        
     }
-
-    // if ($query_store_result) {
-    //     echo 'result uploaded successfully';
-    // } else {
-    //     echo 'error occur uploading result';
-    // }
+    if ($query_store_result or $query_update_result) {
+        header('Location: ../result-upload.php?msg=Result successfully upload&type=success');
+    } else {
+        echo 'error occur uploading result';
+        header('Location: ../result-upload.php?msg="Error during uploading of result !&type=error"');
+    }
 }

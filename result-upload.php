@@ -1,5 +1,6 @@
-<?php 
+<?php
 include './middleware/is_loggedin.php';
+include 'Handlers.php';
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -18,23 +19,23 @@ include './middleware/is_loggedin.php';
   <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap" rel="stylesheet">
   <link rel="stylesheet" type="text/css" href="assets/css/vendors/font-awesome.css">
-    <!-- ico-font-->
-    <link rel="stylesheet" type="text/css" href="assets/css/vendors/icofont.css">
-    <!-- Themify icon-->
-    <link rel="stylesheet" type="text/css" href="assets/css/vendors/themify.css">
-    <!-- Flag icon-->
-    <link rel="stylesheet" type="text/css" href="assets/css/vendors/flag-icon.css">
-    <!-- Feather icon-->
-    <link rel="stylesheet" type="text/css" href="assets/css/vendors/feather-icon.css">
-    <link rel="stylesheet" type="text/css" href="assets/css/vendors/scrollbar.css">
-    <link rel="stylesheet" type="text/css" href="assets/css/vendors/datatables.css">
-    <!-- Bootstrap css-->
-    <link rel="stylesheet" type="text/css" href="assets/css/vendors/bootstrap.css">
-    <!-- App css-->
-    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
-    <link id="color" rel="stylesheet" href="assets/css/color-1.css" media="screen">
-    <!-- Responsive css-->
-    <link rel="stylesheet" type="text/css" href="assets/css/responsive.css">
+  <!-- ico-font-->
+  <link rel="stylesheet" type="text/css" href="assets/css/vendors/icofont.css">
+  <!-- Themify icon-->
+  <link rel="stylesheet" type="text/css" href="assets/css/vendors/themify.css">
+  <!-- Flag icon-->
+  <link rel="stylesheet" type="text/css" href="assets/css/vendors/flag-icon.css">
+  <!-- Feather icon-->
+  <link rel="stylesheet" type="text/css" href="assets/css/vendors/feather-icon.css">
+  <link rel="stylesheet" type="text/css" href="assets/css/vendors/scrollbar.css">
+  <link rel="stylesheet" type="text/css" href="assets/css/vendors/datatables.css">
+  <!-- Bootstrap css-->
+  <link rel="stylesheet" type="text/css" href="assets/css/vendors/bootstrap.css">
+  <!-- App css-->
+  <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+  <link id="color" rel="stylesheet" href="assets/css/color-1.css" media="screen">
+  <!-- Responsive css-->
+  <link rel="stylesheet" type="text/css" href="assets/css/responsive.css">
 
 
 </head>
@@ -43,7 +44,7 @@ include './middleware/is_loggedin.php';
 
   <!-- page-wrapper Start-->
   <div class="page-wrapper compact-wrapper" id="pageWrapper">
-    
+
     <!-- Page Header Start-->
     <?php include 'layout/header.php'; ?>
     <!-- Page Header Ends-->
@@ -53,72 +54,113 @@ include './middleware/is_loggedin.php';
       <?php include 'layout/sidebar.php'; ?>
       <!-- Page Sidebar Ends-->
       <div class="page-body">
-        
+
         <!-- Container-fluid starts-->
         <div class="container-fluid">
-            <div class="row">
-              <!-- Zero Configuration  Starts-->
-              <div class="col-sm-12">
-                <div class="text-center">
-                  <img class="img-fluid for-light mb-3" src="assets/images/logo/logo.png" alt="logo" width="100">
+          <div class="row">
+            <!-- Zero Configuration  Starts-->
+            <div class="col-sm-12">
+              <div class="text-center">
+                <img class="img-fluid for-light mb-3" src="assets/images/logo/logo.png" alt="logo" width="100">
+              </div>
+              <?php
+              if (isset($_GET['msg'])) {
+              ?>
+                <div class="alert <?php if ($_GET['type'] == 'success') {
+                                    echo 'alert-success';
+                                  } else {
+                                    echo 'alert-danger';
+                                  } ?>  outline alert-dismissible fade show" role="alert">
+
+                  <p><b><?php if ($_GET['type'] == 'success') {
+                          echo 'Well done ';
+                        } else {
+                          echo 'Oops ';
+                        } ?> </b>
+
+                    <?php echo $_GET['msg']; ?></p>
+
+                  <button class="btn-close" type="button" data-bs-dismiss="alert" aria-label="Close"></button>
+
                 </div>
-                <div class="card">
-                  <div class="card-header pb-0">
-                    <h4 class="mb-3">Result Uploading Page</h4>
-                      <form action="" method="post">
-                        <div class="mb-3">
-                          <label for="name" class="form-label">Course</label>
-                          <select class="form-select" aria-label="Select example">
-                            <option selected disabled>Select Course Type</option>
-                            <option value="1"></option>
-                            <option value="2"></option>
-                            <option value="3"></option>
-                          </select>
-                        </div>
-                        <div class="mb-3">
-                          <label for="email" class="form-label">Level</label>
-                          <select class="form-select" aria-label="Default select example">
-                            <option selected disabled>Select Level Type</option>
-                            <option value="1"></option>
-                            <option value="2"></option>
-                            <option value="3"></option>
-                          </select>
-                        </div>
-                        <div class="mb-3">
-                          <label for="jamb-no" class="form-label">Session</label>
-                          <select class="form-select" aria-label="Default select example">
-                            <option selected disabled>Select Session Type</option>
-                            <option value="1"></option>
-                            <option value="2"></option>
-                            <option value="3"></option>
-                          </select>
-                        </div>
-                        <div class="mb-3">
-                          <label for="payment-type" class="form-label">Semester</label> 
-                          <select class="form-select" aria-label="Default select example">
-                            <option selected disabled>Select Semester Type</option>
-                            <option value="1"></option>
-                            <option value="2"></option>
-                            <option value="3"></option>
-                          </select>
-                        </div>
-                        <div class="mb-3">
-                        <label for="payment-type" class="form-label">Add Result File</label>
-                          <input type="file" name="payment-type" class="form-control" id="email" placeholder="Payment Type">
-                        </div>
-                        <button type="button" class="btn btn-success">Upload Results</button>
-                      </form>
-                  </div>
+              <?php } ?>
+              <div class="card">
+                <div class="card-header pb-0">
+                  <h4 class="mb-3">Result Uploading Page</h4>
+                  <form action="controller/UploadResult.php" method="post" enctype="multipart/form-data">
+                    <div class="mb-3">
+                      <label for="name" class="form-label">Course</label>
+                      <select class="form-select" aria-label="Select example" name="course_id">
+                        <option selected>Select Course</option>
+                        <?php
+                        $course = course();
+                        foreach ($course as $value) {
+                        ?>
+                          <option value="<?php echo $value['id'] ?>"> <?php echo $value['course_title'] . '(' . $value['course_code'] . ')' ?></option>
+                        <?php
+                        }
+                        ?>
+                      </select>
+                    </div>
+                    <div class="mb-3">
+                      <label for="payment-type" class="form-label">Department</label>
+                      <select class="form-select" aria-label="Default select example" name="department">
+                        <option selected disabled>Select Department</option>
+                        <?php
+                        $departments = departments();
+                        foreach ($departments as $value) {
+                        ?>
+                          <option value="<?php echo $value['id'] ?>"> <?php echo $value['department_name'] ?></option>
+                        <?php
+                        }
+                        ?>
+                      </select>
+                    </div>
+                    <div class="mb-3">
+                      <label class="form-label">Level</label>
+                      <select class="form-select" aria-label="Default select example" name="level">
+                        <option selected disabled>Select Level</option>
+                        <option value="100">100</option>
+                        <option value="200">200</option>
+                        <option value="300">300</option>
+                        <option value="400">400</option>
+                      </select>
+                    </div>
+                    <div class="mb-3">
+                      <label for="jamb-no" class="form-label">Session</label>
+                      <select class="form-select" aria-label="Default select example" name="session">
+                        <option selected disabled>Select Session</option>
+                        <option value="2020/2021">2020/2021</option>
+                        <option value="2021/2022">2021/2022</option>
+                        <option value="2022/2023">2022/2023</option>
+                      </select>
+                    </div>
+
+                    <div class="mb-3">
+                      <label for="payment-type" class="form-label">Semester</label>
+                      <select class="form-select" aria-label="Default select example" name="semester">
+                        <option selected disabled>Select Semester</option>
+                        <option value="1">First Semester</option>
+                        <option value="2">Second Semester</option>
+                      </select>
+                    </div>
+                    <div class="mb-3">
+                      <label for="payment-type" class="form-label">Add Result File</label>
+                      <input type="file" name="result_file" class="form-control">
+                    </div>
+                    <button type="submit" name="upload_result" class="btn btn-success">Upload Results</button>
+                  </form>
                 </div>
               </div>
-              <!-- Zero Configuration  Ends-->
             </div>
+            <!-- Zero Configuration  Ends-->
           </div>
-          <!-- Container-fluid Ends-->
+        </div>
+        <!-- Container-fluid Ends-->
       </div>
     </div>
   </div>
-  
+
   <!-- latest jquery-->
   <script src="assets/js/jquery-3.6.0.min.js"></script>
   <!-- Bootstrap js-->
@@ -151,7 +193,7 @@ include './middleware/is_loggedin.php';
   <script src="assets/js/typeahead-search/typeahead-custom.js"></script>
   <script src="assets/js/dashboard/dashboard_2.js"></script>
   <script src="assets/js/datatable/datatables/jquery.dataTables.min.js"></script>
-    <script src="assets/js/datatable/datatables/datatable.custom.js"></script>
+  <script src="assets/js/datatable/datatables/datatable.custom.js"></script>
   <!-- Template js-->
   <script src="assets/js/script.js"></script>
   <!-- <script src="assets/js/theme-customizer/customizer.js"> </script> -->
