@@ -1,7 +1,7 @@
-<?php 
+<?php
 
-// db connection 
-$dbconnetion = mysqli_connect("localhost","root","","bursary");
-if(!$dbconnetion) {
-    die();
+$dbconnect =  mysqli_connect('localhost', 'root', '', 'summit');
+
+if(!$dbconnect) {
+    die('error connecting to database');
 }
